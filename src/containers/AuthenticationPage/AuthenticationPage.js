@@ -17,6 +17,7 @@ import {
   NamedLink,
   NamedRedirect,
   LinkTabNavHorizontal,
+  ExternalLink,
   IconEmailSent,
   InlineTextButton,
   IconClose,
@@ -150,6 +151,11 @@ export class AuthenticationPageComponent extends Component {
             onOpenTermsOfService={() => this.setState({ tosModalOpen: true })}
           />
         )}
+        <ExternalLink
+          href={`http://localhost:${process.env.REACT_APP_DEV_API_SERVER_PORT}/api/auth/facebook`}
+        >
+          Facebook signup
+        </ExternalLink>
       </div>
     );
 

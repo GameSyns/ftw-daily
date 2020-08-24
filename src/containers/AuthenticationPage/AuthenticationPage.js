@@ -151,11 +151,13 @@ export class AuthenticationPageComponent extends Component {
             onOpenTermsOfService={() => this.setState({ tosModalOpen: true })}
           />
         )}
-        <ExternalLink
-          href={`http://localhost:${process.env.REACT_APP_DEV_API_SERVER_PORT}/api/auth/facebook`}
-        >
+        <a href={`http://localhost:${process.env.REACT_APP_DEV_API_SERVER_PORT}/api/auth/facebook`}>
           Facebook signup
-        </ExternalLink>
+        </a>
+        <br />
+        <a href={`http://localhost:${process.env.REACT_APP_DEV_API_SERVER_PORT}/api/auth/google`}>
+          Google signup
+        </a>
       </div>
     );
 

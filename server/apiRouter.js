@@ -16,7 +16,11 @@ const transactionLineItems = require('./api/transaction-line-items');
 const initiatePrivileged = require('./api/initiate-privileged');
 const transitionPrivileged = require('./api/transition-privileged');
 
-const { authenticateFacebook, authenticateFacebookCallback } = require('./api/auth/facebook');
+const {
+  authenticateFacebook,
+  authenticateFacebookCallback,
+  //authenticateFlex,
+} = require('./api/auth/facebook');
 const { authenticateGoogle, authenticateGoogleCallback } = require('./api/auth/google');
 
 const router = express.Router();

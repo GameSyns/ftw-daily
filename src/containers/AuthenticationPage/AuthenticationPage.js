@@ -152,11 +152,11 @@ export class AuthenticationPageComponent extends Component {
           />
         )}
         <a href={`http://localhost:${process.env.REACT_APP_DEV_API_SERVER_PORT}/api/auth/facebook`}>
-          Facebook signup
+          Facebook login
         </a>
         <br />
         <a href={`http://localhost:${process.env.REACT_APP_DEV_API_SERVER_PORT}/api/auth/google`}>
-          Google signup
+          Google login
         </a>
       </div>
     );

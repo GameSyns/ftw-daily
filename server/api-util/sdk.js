@@ -89,7 +89,7 @@ exports.getSdk = (req, res) => {
   });
 };
 
-exports.getTrustedSdk = req => {
+exports.getTrustedSdk = (req, skipExchange) => {
   const userToken = getUserToken(req);
 
   // Initiate an SDK instance for token exchange
@@ -103,6 +103,12 @@ exports.getTrustedSdk = req => {
     typeHandlers,
     ...baseUrlMaybe,
   });
+
+  // We need SDK instance with clientSecret for authenticating with idp
+  // Because the user is not auhtenticated yet, we can't do the token exchange
+  if (skipExchange) {
+    return sdk;
+  }
 
   // Perform a token exchange
   return sdk.exchangeToken().then(response => {
